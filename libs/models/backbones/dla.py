@@ -389,16 +389,17 @@ class DLA(nn.Module):
 
     def load_pretrained_model(self, data='imagenet', name='dla34', hash='ba72cf86'):
         # fc = self.fc
-        if name.endswith('.pth'):
-            model_weights = torch.load(data + name)
-        else:
-            model_url = get_model_url(data, name, hash)
-            model_weights = model_zoo.load_url(model_url)
-        self.load_state_dict(model_weights, strict=False)
+        # if name.endswith('.pth'):
+        #     model_weights = torch.load(data + name)
+        # else:
+        #     model_url = get_model_url(data, name, hash)
+        #     model_weights = model_zoo.load_url(model_url)
+        # self.load_state_dict(model_weights, strict=False)
+        return
         # self.fc = fc
 
 
-def dla34(pretrained=True, levels=None, in_channels=None, **kwargs):  # DLA-34
+def dla34(pretrained=False, levels=None, in_channels=None, **kwargs):  # DLA-34
     model = DLA(levels=levels, channels=in_channels, block=BasicBlock, **kwargs)
     if pretrained:
         model.load_pretrained_model(data='imagenet', name='dla34', hash='ba72cf86')
@@ -410,7 +411,7 @@ class DLANet(nn.Module):
     def __init__(
         self,
         dla='dla34',
-        pretrained=True,
+        pretrained=False,
         levels=[1, 1, 1, 2, 2, 1],
         in_channels=[16, 32, 64, 128, 256, 512],
         cfg=None,
