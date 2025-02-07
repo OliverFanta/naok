@@ -10,6 +10,10 @@ import time
 import warnings
 
 import torch
+import sys
+
+# Add the parent directory (naok) to sys.path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from mmcv.runner import get_dist_info, init_dist
 from mmcv.utils import Config, DictAction, get_git_hash, mkdir_or_exist
 from mmdet import __version__
