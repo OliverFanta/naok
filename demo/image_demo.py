@@ -4,8 +4,14 @@ from argparse import ArgumentParser
 
 from mmdet.apis import init_detector
 
-from ..libs.api.inference import inference_one_image
-from ..libs.utils.visualizer import visualize_lanes
+import sys
+import os
+
+# Add the parent directory (naok) to sys.path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
+from libs.api.inference import inference_one_image
+from libs.utils.visualizer import visualize_lanes
 
 
 def parse_args():
