@@ -1,5 +1,5 @@
 dataset_type = "CulaneDataset"
-data_root = "/kaggle/input/clr-culane/CLer_Culane"
+data_root = "/kaggle/input/culane-f1/CULane"
 crop_bbox = [0, 270, 1640, 590]
 img_scale = (800, 320)
 img_norm_cfg = dict(mean=[0.0, 0.0, 0.0], std=[255.0, 255.0, 255.0], to_rgb=False)
@@ -111,7 +111,7 @@ data = dict(
         type=dataset_type,
         data_root=data_root,
         data_list=data_root + "/list/train_gt.txt",
-        diff_file=data_root + "/list/train_diffs.npz",
+        diff_file="/kaggle/input/train_diff/pytorch/default/1/train_diffs.npz",
         diff_thr=15,
         pipeline=train_pipeline,
         test_mode=False,
