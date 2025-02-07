@@ -6,6 +6,10 @@ https://github.com/aliyun/conditional-lane-detection/blob/master/mmdet/datasets/
 
 import shutil
 from pathlib import Path
+import sys
+import os
+# Add the parent directory (naok) to sys.path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 import cv2
 import numpy as np
