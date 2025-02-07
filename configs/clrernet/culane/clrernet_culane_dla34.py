@@ -4,6 +4,12 @@ _base_ = [
     "../../_base_/default_runtime.py",
 ]
 
+import sys
+import os
+
+# Add the parent directory (naok) to sys.path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 # custom imports
 custom_imports = dict(
     imports=[
