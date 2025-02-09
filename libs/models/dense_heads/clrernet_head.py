@@ -10,7 +10,7 @@ import torch.nn.functional as F
 from mmcv.cnn.bricks.transformer import build_attention
 from mmdet.core import build_assigner, build_prior_generator
 from mmdet.models.builder import HEADS, build_loss
-from nms import nms
+from torchvision.ops import nms
 
 from libs.models.dense_heads.seg_decoder import SegDecoder
 from libs.utils.lane_utils import Lane
