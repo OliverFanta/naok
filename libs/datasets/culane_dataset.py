@@ -6,6 +6,7 @@ https://github.com/aliyun/conditional-lane-detection/blob/master/mmdet/datasets/
 
 import shutil
 from pathlib import Path
+from torch vision.ops import nms
 import sys
 import os
 # Add the parent directory (naok) to sys.path
